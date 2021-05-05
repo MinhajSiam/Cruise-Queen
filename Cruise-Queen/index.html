@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    <section>
+        
     <!--Header and Menu Section-->
     <header class="container">
         <nav>
@@ -60,10 +62,11 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <button class="plus-button">+</button>
+                    <button class="minus-button">-</button>
                 </div>
             </div>
 
@@ -73,7 +76,8 @@
                     <input class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <button class="plus-button">+</button>
+                    <button class="minus-button">-</button>
                 </div>
             </div>
             <div class="calculations">
@@ -106,9 +110,19 @@
             </div>
             <button class="btn-style">Book Now</button>
         </div>
-    </main>
+        <script>
+            document.getElementById('plus-button').addEventListener('click', function(){
+                const firstClassInput = document.getElementById('first-class-input');
+                const firstClassCount = parseInt(firstClassInput.value);
+                const firstClassNewCount = firstClassCount + 1;
+                firstClassInput.value = firstClassNewCount;
+                console.log('plus clicked');
+            })
 
-    <!--Thank You-->
+
+        </script>
+    </main>
+    </section>
 </body>
 
 </html>

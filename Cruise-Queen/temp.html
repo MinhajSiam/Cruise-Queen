@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+
+        <div class="booking-content">
+            <h1>Cruise Queen</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book./p>
+        </div>
+
+
+        <div class="booking-form">
+            <h3>Book Ocean Time</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                        <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class ($150)</label>
+                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <p><span id="first-class-positive">+</span> <span id="first-class-negative">-</span></p>
+                </div>
+            </div>
+
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ($100)</label>
+                    <input id="economy-class-input" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <p> <span id="economy-class-positive">+</span> <span id="economy-class-negative">-</span> </p>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="subTotal">0</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="vat">0</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="grandTotal">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <button id="book-now" class="btn-style" data-toggle="modal" data-target="#exampleModalCenter">Book
+                Now</button>
+        </div>
+
+        <!-- Modal for Book Now button-->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalCenterTitle">Congratulations!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center">
+                            <h5>Your Ticket Booking</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <h6>Confirmed</h6>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>Have a good trip</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </main>
+
+    <!--Thank You-->
+    <script>
+        //Global variable's
+        const positive = 1;
+        const negative = -1;
+        const firstClass = 150;
+        const economyClass = 100;
+        //First class booking area
+        //event handler for positive button in first class
+        document.getElementById('first-class-positive').addEventListener('click', function () {
+            const finalTicketAmount = ticketCounter('first-class-input', positive);
+            document.getElementById('first-class-input').value = finalTicketAmount;
+            const finalSubTotal = subTotalCalculator('subTotal', firstClass, positive);
+            document.getElementById('subTotal').innerText = finalSubTotal;
+            const finalVat = vatCalculator('vat', finalSubTotal);
+            document.getElementById('vat').innerText = finalVat;
+            grandTotal('grandTotal', finalSubTotal, finalVat);
+
+        })
+        //event handler for first class negative button
+        document.getElementById('first-class-negative').addEventListener('click', function () {
+            const finalTicketAmount = ticketCounter('first-class-input', negative);
+            document.getElementById('first-class-input').value = finalTicketAmount;
+            const finalSubTotal = subTotalCalculator('subTotal', firstClass, negative);
+            document.getElementById('subTotal').innerText = finalSubTotal;
+            const finalVat = vatCalculator('vat', finalSubTotal);
+            document.getElementById('vat').innerText = finalVat;
+            grandTotal('grandTotal', finalSubTotal, finalVat);
+        })
+
+        //Economy class booking area
+        //event handler for economy class positive button
+        document.getElementById('economy-class-positive').addEventListener('click', function () {
+            const finalTicketAmount = ticketCounter('economy-class-input', positive)
+            document.getElementById('economy-class-input').value = finalTicketAmount;
+            const finalSubTotal = subTotalCalculator('subTotal', economyClass, positive);
+            document.getElementById('subTotal').innerText = finalSubTotal;
+            const finalVat = vatCalculator('vat', finalSubTotal);
+            document.getElementById('vat').innerText = finalVat;
+            grandTotal('grandTotal', finalSubTotal, finalVat);
+        })
+        //event handler for economy class negative button
+        document.getElementById('economy-class-negative').addEventListener('click', function () {
+            const finalTicketAmount = ticketCounter('economy-class-input', negative);
+            document.getElementById('economy-class-input').value = finalTicketAmount;
+            const finalSubTotal = subTotalCalculator('subTotal', economyClass, negative);
+            document.getElementById('subTotal').innerText = finalSubTotal;
+            const finalVat = vatCalculator('vat', finalSubTotal);
+            document.getElementById('vat').innerText = finalVat;
+            grandTotal('grandTotal', finalSubTotal, finalVat);
+        })
+
+        //This area contains all functions
+        //counter function
+        function ticketCounter(id, sign) {
+            const initialValue = parseInt(document.getElementById(id).value);
+            const tickets = initialValue + sign;
+            return tickets;
+        }
+        
+
+        //subtotal function
+        function subTotalCalculator(id, whichClass, sign) {
+            if (sign === positive) {
+                const initialSubTotal = parseInt(document.getElementById(id).innerText);
+                const finalSubTotal = initialSubTotal + whichClass;
+                return finalSubTotal;
+            } else {
+                sign === negative;
+                const initialSubTotal = parseInt(document.getElementById(id).innerText);
+                const finalSubTotal = initialSubTotal - whichClass;
+                return finalSubTotal;
+            }
+        }
+
+
+        //vat calculation function
+        function vatCalculator(id, finalSubTotal) {
+            const finalVat = (finalSubTotal / 100) * 10;
+            return finalVat;
+        }
+
+
+        //grand total calculation
+        function grandTotal(id, finalSubTotal, finalVat) {
+            const total = finalSubTotal + finalVat;
+            document.getElementById(id).innerText = total;
+        }
+    </script>
+</body>
+
+</html>

@@ -113,23 +113,43 @@
             </div>
             <script>
                 document.getElementById('first-plus-button').addEventListener('click', function () {
-                    const firstClassInput = document.getElementById('first-input');
-                    const firstClassCount = parseInt(firstClassInput.value);
-                    const firstClassNewCount = firstClassCount + 1;
-                    firstClassInput.value = firstClassNewCount;
-                    const firstClassTotal = firstClassNewCount * 150;
-                    document.getElementById('sub-total').innerText = '$' + firstClassTotal;
+                    handleProductChange(true);
                 })
 
                 document.getElementById('first-minus-button').addEventListener('click', function () {
+                    handleProductChange(false);
+                })
+                function handleProductChange(isIncrease) {
                     const firstClassInput = document.getElementById('first-input');
                     const firstClassCount = parseInt(firstClassInput.value);
-                    const firstClassNewCount = firstClassCount - 1;
+                    let firstClassNewCount = firstClassCount;
+                    if (isIncrease == true) {
+                        firstClassNewCount = firstClassCount + 1;
+                    }
+                    if (isIncrease == false & firstClassCount > 0) {
+                        firstClassNewCount = firstClassCount - 1;
+                    }
                     firstClassInput.value = firstClassNewCount;
                     const firstClassTotal = firstClassNewCount * 150;
                     document.getElementById('sub-total').innerText = '$' + firstClassTotal;
+                }
+                // document.getElementById('first-plus-button').addEventListener('click', function () {
+                //     const firstClassInput = document.getElementById('first-input');
+                //     const firstClassCount = parseInt(firstClassInput.value);
+                //     const firstClassNewCount = firstClassCount + 1;
+                //     firstClassInput.value = firstClassNewCount;
+                //     const firstClassTotal = firstClassNewCount * 150;
+                //     document.getElementById('sub-total').innerText = '$' + firstClassTotal;
+                // })
 
-                })
+                // document.getElementById('first-minus-button').addEventListener('click', function () {
+                //     const firstClassInput = document.getElementById('first-input');
+                //     const firstClassCount = parseInt(firstClassInput.value);
+                //     const firstClassNewCount = firstClassCount - 1;
+                //     firstClassInput.value = firstClassNewCount;
+                //     const firstClassTotal = firstClassNewCount * 150;
+                //     document.getElementById('sub-total').innerText = '$' + firstClassTotal;
+                // })
 
                 document.getElementById('eco-plus-button').addEventListener('click', function () {
                     const ecoClassInput = document.getElementById('eco-input');

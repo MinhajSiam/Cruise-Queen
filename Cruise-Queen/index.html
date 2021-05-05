@@ -15,143 +15,144 @@
 
 <body>
     <section>
-        
-    <!--Header and Menu Section-->
-    <header class="container">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a class="active" href="#">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!--Booking Section-->
-    <main class="main-content container">
+        <!--Header and Menu Section-->
+        <header class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a class="active" href="#">Sign Up</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="booking-content">
-            <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book./p>
-        </div>
+        <!--Booking Section-->
+        <main class="main-content container">
 
-
-        <div class="booking-form">
-            <h3>Book Ocean Time</h3>
-            <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+            <div class="booking-content">
+                <h1>Cruise Queen</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book./p>
             </div>
-            <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
-            </div>
-            <div class="inputs">
+
+
+            <div class="booking-form">
+                <h3>Book Ocean Time</h3>
                 <div class="input-group">
-                    <label" for="">Departure</label>
+                    <label for="">Flying From</label>
+                    <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                </div>
+                <div class="input-group">
+                    <label for="">Flying To</label>
+                    <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                </div>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label" for="">Departure</label>
+                            <input class="inp-style" type="date" name="">
+                    </div>
+                    <div class="input-group">
+                        <label for="">Return</label>
                         <input class="inp-style" type="date" name="">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input id="first-input" class="inp-style inp-width" type="number" name="" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button id="first-minus-button" class="minus-button">-</button>
+                        <button id="first-plus-button" class="plus-button">+</button>
+                    </div>
                 </div>
+
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy ($100)</label>
+                        <input id="eco-input" class="inp-style inp-width" type="number" name="" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button id="eco-minus-button" class="minus-button">-</button>
+                        <button id="eco-plus-button" class="plus-button">+</button>
+                    </div>
+                </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="right">
+                            <p id="sub-total">$000</p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT</p>
+                        </div>
+                        <div class="right">
+                            <p>$50</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total</h4>
+                        </div>
+                        <div class="right">
+                            <p>$550</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-style">Book Now</button>
             </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="first-input" class="inp-style inp-width" type="number" name="" value="0">
-                </div>
-                <div class="plus-minus-btn">
-                    <button id="first-minus-button" class="minus-button">-</button>
-                    <button id="first-plus-button" class="plus-button">+</button>
-                </div>
-            </div>
+            <script>
+                document.getElementById('first-plus-button').addEventListener('click', function () {
+                    const firstClassInput = document.getElementById('first-input');
+                    const firstClassCount = parseInt(firstClassInput.value);
+                    const firstClassNewCount = firstClassCount + 1;
+                    firstClassInput.value = firstClassNewCount;
+                    const firstClassTotal = firstClassNewCount * 150;
+                    document.getElementById('sub-total').innerText = '$' + firstClassTotal;
+                })
 
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="eco-input" class="inp-style inp-width" type="number" name="" value="0">
-                </div>
-                <div class="plus-minus-btn">
-                    <button id="eco-minus-button" class="minus-button">-</button>
-                    <button id="eco-plus-button" class="plus-button">+</button>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
-                    </div>
-                    <div class="right">
-                        <p id="sub-total">$000</p>
-                    </div>
-                </div>
+                document.getElementById('first-minus-button').addEventListener('click', function () {
+                    const firstClassInput = document.getElementById('first-input');
+                    const firstClassCount = parseInt(firstClassInput.value);
+                    const firstClassNewCount = firstClassCount - 1;
+                    firstClassInput.value = firstClassNewCount;
+                    const firstClassTotal = firstClassNewCount * 150;
+                    document.getElementById('sub-total').innerText = '$' + firstClassTotal;
 
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
-                    </div>
-                    <div class="right">
-                        <p>$50</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p>$550</p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn-style">Book Now</button>
-        </div>
-        <script>
-            document.getElementById('first-plus-button').addEventListener('click', function(){
-                const firstClassInput = document.getElementById('first-input');
-                const firstClassCount = parseInt(firstClassInput.value);
-                const firstClassNewCount = firstClassCount + 1;
-                firstClassInput.value = firstClassNewCount;
-                const firstClassTotal = firstClassNewCount * 150;
-                document.getElementById('sub-total').innerText = '$' + firstClassTotal;
-            })
+                })
 
-            document.getElementById('first-minus-button').addEventListener('click', function(){
-                const firstClassInput = document.getElementById('first-input');
-                const firstClassCount = parseInt(firstClassInput.value);
-                const firstClassNewCount = firstClassCount - 1;
-                firstClassInput.value = firstClassNewCount;
-                const firstClassTotal = firstClassNewCount * 150;
-                document.getElementById('sub-total').innerText = '$' + firstClassTotal;
-                
-            })
+                document.getElementById('eco-plus-button').addEventListener('click', function () {
+                    const ecoClassInput = document.getElementById('eco-input');
+                    const ecoClassCount = parseInt(ecoClassInput.value);
+                    const ecoClassNewCount = ecoClassCount + 1;
+                    ecoClassInput.value = ecoClassNewCount;
+                    const ecoClassTotal = ecoClassNewCount * 100;
+                    document.getElementById('sub-total').innerText = '$' + ecoClassTotal;
 
-            document.getElementById('eco-plus-button').addEventListener('click', function(){
-                const ecoClassInput = document.getElementById('eco-input');
-                const ecoClassCount = parseInt(ecoClassInput.value);
-                const ecoClassNewCount = ecoClassCount + 1;
-                ecoClassInput.value = ecoClassNewCount;
-                const ecoClassTotal = ecoClassNewCount * 150;
-                document.getElementById('sub-total').innerText = '$' + ecoClassTotal;
-                
-            })
+                })
 
-            document.getElementById('eco-minus-button').addEventListener('click', function(){
-                const ecoClassInput = document.getElementById('eco-input');
-                const ecoClassCount = parseInt(ecoClassInput.value);
-                const ecoClassNewCount = ecoClassCount - 1;
-                ecoClassInput.value = ecoClassNewCount;
-                const ecoClassTotal = ecoClassNewCount * 150;
-                document.getElementById('sub-total').innerText = '$' + ecoClassTotal;
-                
-            })
+                document.getElementById('eco-minus-button').addEventListener('click', function () {
+                    const ecoClassInput = document.getElementById('eco-input');
+                    const ecoClassCount = parseInt(ecoClassInput.value);
+                    const ecoClassNewCount = ecoClassCount - 1;
+                    ecoClassInput.value = ecoClassNewCount;
+                    const ecoClassTotal = ecoClassNewCount * 100;
+                    document.getElementById('sub-total').innerText = '$' + ecoClassTotal;
 
-        </script>
-    </main>
+                })
+
+            </script>
+        </main>
     </section>
 </body>
 

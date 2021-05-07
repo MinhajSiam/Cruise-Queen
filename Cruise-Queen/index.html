@@ -96,7 +96,7 @@
                             <p>Charge 10% VAT</p>
                         </div>
                         <div class="right">
-                            <p>$50</p>
+                            <p id="tax-amount">$00</p>
                         </div>
                     </div>
                     <hr>
@@ -105,7 +105,7 @@
                             <h4>Total</h4>
                         </div>
                         <div class="right">
-                            <p>$550</p>
+                            <p id="grand-total">$000</p>
                         </div>
                     </div>
                 </div>
@@ -132,16 +132,16 @@
                     ticketInput.value = ticketNewCount;
                     // const ticketTotal = ticketNewCount * 150;
                     let ticketTotal = 0;
-                    if(ticket == 'first'){
+                    if (ticket == 'first') {
                         ticketTotal = ticketNewCount * 150;
                     }
-                    if(ticket == 'eco'){
+                    if (ticket == 'eco') {
                         ticketTotal = ticketNewCount * 100;
                     }
                     calculateSubTotal();
                     // document.getElementById('sub-total').innerText = '$' + ticketTotal;
                 }
-                function calculateSubTotal(){
+                function calculateSubTotal() {
                     const firstInput = document.getElementById('first-input');
                     const firstCount = parseInt(firstInput.value);
 
@@ -150,6 +150,12 @@
 
                     const subTotal = firstCount * 150 + ecoCount * 100;
                     document.getElementById('sub-total').innerText = '$' + subTotal;
+
+                    const tax = Math.round(subTotal * 0.1);
+                    document.getElementById('tax-amount').innerText = '$' + tax;
+
+                    const grandTotal = subTotal + tax;
+                    document.getElementById('grand-total').innerText = '$' + grandTotal;
                 }
 
 
@@ -230,13 +236,14 @@
         </main>
     </section>
     <!-- Start of LiveChat (www.livechatinc.com) code -->
-<script>
-    window.__lc = window.__lc || {};
-    window.__lc.license = 12800607;
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-</script>
-<noscript><a href="https://www.livechatinc.com/chat-with/12800607/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-<!-- End of LiveChat code -->
+    <script>
+        window.__lc = window.__lc || {};
+        window.__lc.license = 12800607;
+        ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))
+    </script>
+    <noscript><a href="https://www.livechatinc.com/chat-with/12800607/" rel="nofollow">Chat with us</a>, powered by <a
+            href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+    <!-- End of LiveChat code -->
 
 </body>
 
